@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>LCD Pano</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="LCD Pano, okul koridorlarınızda bulunan LCD TV'leri daha etkin ve verimli kullanabilmenizi sağlayan bir dijital pano uygulamasıdır. Renkli arayüzüyle okulunuza canlılık getirir."
+    />
+    <meta name="theme-color" content="#151515" />
+    <meta name="apple-mobile-web-app-title" content="LCD Pano" />
+    <meta name="application-name" content="LCD Pano" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Application Title" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="msapplication-navbutton-color" content="white" />
+    <meta name="msapplication-TileColor" content="white" />
+    <meta name="msapplication-TileImage" content="/icons/150x150.png" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    <meta name="application-name" content="LCD Pano" />
+    <meta name="msapplication-tooltip" content="Okullar için dijital pano uygulaması" />
+    <meta name="msapplication-starturl" content="/" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="layoutmode" content="fitscreen/standard" />
+    <meta name="imagemode" content="force" />
+    <meta name="screen-orientation" content="landscape" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/16x16.png" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/180x180.png" />
+    <style type="text/css">
+      #browserVersionMessage {
+        display: none;
+        font-family: Arial, Helvetica, sans-serif;
+        position: fixed;
+        background-color: white;
+        z-index: 999;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0px 0px 16px 8px rgba(0, 0, 0, 0.1);
+      }
+      #browserVersionMessage h5 {
+        text-align: center;
+      }
+      #browserVersionMessage button {
+        position: absolute;
+        font-size: 1.5rem;
+        line-height: 1rem;
+        padding: 5px;
+        right: 0.5rem;
+        top: 0.5rem;
+        border: none;
+        background-color: lightgray;
+      }
+      #browserVersionMessage button:hover {
+        color: white;
+      }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ELWSYE531"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bowser/2.11.0/bundled.min.js"
+      integrity="sha512-hsF/cpBvi/vjCP4Ps/MrPUFk6l4BqcGbzVUhqjJdX2SmAri1Oj8FBUGCvBiKHYd6gg3vLsV16CtIRNOvK5X4lQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-6ELWSYE531");
+
+      document.addEventListener("DOMContentLoaded", () => {
+        if (window.bowser) {
+          const browser = window.bowser.getParser(window.navigator.userAgent);
+          const isValidBrowser = browser.satisfies({
+            mobile: {
+              chrome: ">=109",
+              "android browser": ">=109"
+            },
+            chrome: ">=87",
+            chromium: ">=87",
+            firefox: ">=111",
+            opera: ">=72",
+            edge: ">=88",
+            safari: ">=15.2"
+          });
+          if (!isValidBrowser) {
+            const invalidMessageDiv = document.createElement("div");
+            invalidMessageDiv.id = "browserVersionMessage";
+            invalidMessageDiv.innerHTML = `
+                <button type="button" id="closeBrowserVersionMessage">&Cross;</button>
+                <h5>LCD Pano'ya Hoşgeldiniz!</h5>
+                <p>⚠️ Desteklenmeyen veya sürümü eski bir tarayıcı kullanıyorsunuz.<br />Uygulama veya bazı fonksiyonlar beklendiği gibi çalışmayabilir.</p>
+                <p>Lütfen tarayıcınızı güncelleyiniz.</p>
+                <p>Desteklenen minimum sürümler:
+                  <ul>
+                    <li>Chrome/Chromium 87+</li>
+                    <li>Edge 88+</li>
+                    <li>Firefox 111+</li>
+                    <li>Safari 15.2+</li>
+                    <li>Opera 72+</li>
+                    <li>Android Chrome 109+</li>
+                    <li>Android Browser 109+</li>
+                  </ul>
+                </p>`;
+            document.body.appendChild(invalidMessageDiv);
+            invalidMessageDiv.style.display = "block";
+
+            const closeButton = document.getElementById("closeBrowserVersionMessage");
+            closeButton.addEventListener("click", () => {
+              invalidMessageDiv.remove();
+            });
+          }
+        }
+      });
+    </script>
+    <script type="module" crossorigin src="/assets/index-C-eRHJxD.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DMjbG4TM.css">
+  <link rel="manifest" href="/manifest.webmanifest"></head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
